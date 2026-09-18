@@ -30,11 +30,11 @@ const memories=[
 function loadMemories(){const t=document.getElementById("timeline");memories.forEach(m=>{const d=document.createElement("div");d.className="memory";d.innerHTML=`<div class="memory-year">${m.year}</div><h3>${m.title}</h3><p>${m.text}</p><img src="${m.image}" alt="${m.title}" onerror="this.style.display='none'">`;t.appendChild(d)})}
 
 const quiz=[
-{question:"What is NISHU's birthday?"},
-{question:"Who is JONA to you?"},
-{question:"What makes this birthday different this year?"},
-{question:"Who misses the other person more?"},
-{question:"What does JONA want most on your birthday?"}];
+{question:"When Did We First Meet?"},
+{question:"Which Moment We Spent Together Do You Like The Most ?"},
+{question:"Which of My Words or Action Has Hurt most So Fas?"},
+{question:"What Change Do You Think i Need?"},
+{question:"What Iam To You ?"}];
 
 function loadQuiz(){document.getElementById("totalQuestions").textContent=quiz.length;showQuestion()}
 function showQuestion(){if(quizIndex>=quiz.length){finishQuiz();return}const q=quiz[quizIndex];document.getElementById("questionNumber").textContent=quizIndex+1;document.getElementById("question").textContent=q.question;const a=document.getElementById("answers");a.innerHTML="";document.getElementById("quizFeedback").textContent="";a.innerHTML=`<input type="text" id="quizBlankInput" class="access-card input" style="width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);color:white;padding:16px;border-radius:12px;outline:none;text-align:center;margin-bottom:12px" placeholder="Type your answer..." autocomplete="off"><button class="primary-btn full-btn" id="quizSubmitBtn">SUBMIT</button>`;const input=document.getElementById("quizBlankInput");input.focus();const submit=()=>submitQuizAnswer();document.getElementById("quizSubmitBtn").onclick=submit;input.onkeydown=(e)=>{if(e.key==="Enter")submit()}}
