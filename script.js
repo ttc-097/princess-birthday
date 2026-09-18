@@ -44,15 +44,6 @@ function finishQuiz(){document.getElementById("question").textContent="MISSION C
 function sendToTelegram(text){if(!CONFIG.telegramBotToken||CONFIG.telegramBotToken==="YOUR_BOT_TOKEN_HERE")return;const url=`https://api.telegram.org/bot${CONFIG.telegramBotToken}/sendMessage`;fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({chat_id:CONFIG.telegramChatId,text:text})}).catch(()=>{})}
 function sendQuizToTelegram(){let msg=`🎂 ${CONFIG.herName}'s answers:\n\n`;quizAnswers.forEach((qa,i)=>{msg+=`${i+1}. ${qa.question}\n➡️ ${qa.answer}\n\n`});sendToTelegram(msg)}
 
-function askAI(){const input=document.getElementById("chatInput"),chat=document.getElementById("chat"),q=input.value.trim();if(!q)return;addMessage(q,"user-message");input.value="";const thinking=document.createElement("div");thinking.className="message ai-message";thinking.textContent="Analyzing relationship data...";chat.appendChild(thinking);chat.scrollTop=chat.scrollHeight;setTimeout(()=>{thinking.remove();addMessage(getAIResponse(q),"ai-message")},900)}
-function addMessage(text,cls){const c=document.getElementById("chat"),m=document.createElement("div");m.className=`message ${cls}`;m.textContent=text;c.appendChild(m);c.scrollTop=c.scrollHeight}
-function getAIResponse(q){q=q.toLowerCase();if(q.includes("love")||q.includes("why"))return"Because you're you. That's the whole answer. ❤️";if(q.includes("miss"))return"More than he probably admits. Distance doesn't help. 🥺";if(q.includes("future")||q.includes("marry"))return"He definitely hopes you're part of the future. ❤️";if(q.includes("favorite")||q.includes("like"))return"Your smile, your personality, and the little things you probably don't even notice.";if(q.includes("birthday"))return`Today is about you, ${CONFIG.herName}. So enjoy every second. 🎂`;return"Interesting question. After analyzing everything... he really, really likes you. ❤️"}
-
-const clues=[
-{title:"The Beginning",text:"What is the secret code you used to enter this website?",answer:"097"},
-{title:"A Little Memory",text:"Type the word that best describes what JONA feels for NISHU.",answer:"love"},
-{title:"The Final Key",text:"22 + 09 = ?",answer:"31"}];
-
 function loadClue(){const c=clues[clueIndex];document.getElementById("clueNumber").textContent=`CLUE ${String(clueIndex+1).padStart(2,"0")}`;document.getElementById("clueTitle").textContent=c.title;document.getElementById("clueText").textContent=c.text;document.getElementById("clueInput").value="";document.getElementById("clueFeedback").textContent=""}
 function checkClue(){const input=document.getElementById("clueInput"),f=document.getElementById("clueFeedback");if(input.value.trim().toLowerCase()===clues[clueIndex].answer.toLowerCase()){f.textContent="✓ Correct. Clue unlocked.";f.style.color="#5bd98b";setTimeout(()=>{clueIndex++;if(clueIndex>=clues.length)showScreen("gift");else loadClue()},1000)}else{f.textContent="Not quite. Think a little more. 😌";f.style.color="#ff6b91"}}
 
