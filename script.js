@@ -23,9 +23,9 @@ function playMusic(){const music=document.getElementById("music");music.volume=.
 function updateCountdown(){const target=new Date(CONFIG.birthday).getTime(),distance=target-Date.now(),title=document.getElementById("countdownTitle"),status=document.getElementById("birthdayStatus");if(distance<=0){["days","hours","minutes","seconds"].forEach(x=>document.getElementById(x).textContent="00");title.textContent="IT'S YOUR DAY ❤️";status.textContent=`Happy Birthday, ${CONFIG.herName}!`;return}document.getElementById("days").textContent=String(Math.floor(distance/86400000)).padStart(2,"0");document.getElementById("hours").textContent=String(Math.floor(distance/3600000)%24).padStart(2,"0");document.getElementById("minutes").textContent=String(Math.floor(distance/60000)%60).padStart(2,"0");document.getElementById("seconds").textContent=String(Math.floor(distance/1000)%60).padStart(2,"0");status.textContent="Counting every second until your day."}
 
 const memories=[
-{year:"THE BEGINNING",title:"Where it all started",text:"Replace this with your first memory together.",image:"assets/photos/memory01.jpg"},
-{year:"MEMORY 02",title:"That one unforgettable day",text:"Write something only the two of you understand.",image:"assets/photos/memory02.jpg"},
-{year:"MEMORY 03",title:"A moment I still remember",text:"Add another personal story here.",image:"assets/photos/memory03.jpg"}];
+{year:"THE BEGINNING",title:"Where it all started",text:"Capture before first touch .",image:"assets/photos/memory01.jpg"},
+{year:"MEMORY 02",title:"That one unforgettable day",text:"Sharee with you jooss combination",image:"assets/photos/memory02.jpg"},
+{year:"MEMORY 03",title:"A moment I still remember",text:"4 th meet ",image:"assets/photos/memory03.jpg"}];
 
 function loadMemories(){const t=document.getElementById("timeline");memories.forEach(m=>{const d=document.createElement("div");d.className="memory";d.innerHTML=`<div class="memory-year">${m.year}</div><h3>${m.title}</h3><p>${m.text}</p><img src="${m.image}" alt="${m.title}" onerror="this.style.display='none'">`;t.appendChild(d)})}
 
