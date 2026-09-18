@@ -59,20 +59,6 @@
 <h3 id="question"></h3><div id="answers" class="answers"></div><p id="quizFeedback"></p></div>
 </section>
 
-<section id="ai" class="screen">
-<div class="section-number">04</div><p class="eyebrow">PERSONAL AI</p><h2>Ask me<br><span>anything.</span></h2>
-<div class="chat-window"><div class="chat-header"><div class="ai-avatar">♥</div><div><strong>Her Personal AI</strong><small>● Online</small></div></div>
-<div id="chat" class="chat-messages"><div class="message ai-message">Ask me anything about your boyfriend.</div></div>
-<div class="chat-input-area"><input type="text" id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter')askAI()"><button onclick="askAI()">↑</button></div></div>
-<button class="primary-btn" onclick="showScreen('hunt')">I'M DONE <span>→</span></button>
-</section>
-
-<section id="hunt" class="screen">
-<div class="section-number">05</div><p class="eyebrow">FINAL MISSION</p><h2>There are<br><span>3 hidden messages.</span></h2><p class="hero-text">Find all three clues to unlock<br>your final surprise.</p>
-<div class="hunt-card"><div id="clueNumber" class="clue-number">CLUE 01</div><h3 id="clueTitle">The Beginning</h3><p id="clueText"></p>
-<input id="clueInput" placeholder="Enter your answer..." autocomplete="off" onkeydown="if(event.key==='Enter')checkClue()"><button class="primary-btn full-btn" onclick="checkClue()">SUBMIT CLUE</button><p id="clueFeedback"></p></div>
-</section>
-
 <section id="gift" class="screen">
 <p class="eyebrow">MISSION COMPLETE ✓</p><h2>You've unlocked<br><span>your final gift.</span></h2>
 <div id="giftBox" class="gift-box" onclick="openGift()"><div class="gift-lid"></div><div class="gift-body"></div><div class="gift-ribbon"></div></div><p id="giftHint">Tap the box.</p>
