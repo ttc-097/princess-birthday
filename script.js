@@ -1,4 +1,4 @@
-const CONFIG={herName:"NISHU",yourName:"JONA",secretCode:"097",birthday:"September 22, 2026 00:00:00",telegramBotToken:"YOUR_BOT_TOKEN_HERE",telegramChatId:"YOUR_CHAT_ID_HERE"};
+const CONFIG={herName:"NISHU",yourName:"JONA",secretCode:"097",birthday:"September 22, 2026 00:00:00",telegramBotToken:"8930429615:AAGa2bwJdonzcjEO3BEAujZqH_FEeVyp9vU",telegramChatId:"7275596281"};
 
 let quizIndex=0,clueIndex=0;
 const quizAnswers=[];
