@@ -29,8 +29,8 @@ const memories=[
 function loadMemories(){const t=document.getElementById("timeline");memories.forEach(m=>{const d=document.createElement("div");d.className="memory";d.innerHTML=`<div class="memory-year">${m.year}</div><h3>${m.title}</h3><p>${m.text}</p><img src="${m.image}" alt="${m.title}" onerror="this.style.display='none'">`;t.appendChild(d)})}
 
 const quiz=[
-{question:"What is NISHU's birthday?",answers:["20 September","21 September","22 September","23 September"],correct:2},
-{question:"Who is JONA?",answers:["Her best friend","Her boyfriend ❤️","Her teacher","A secret agent"],correct:1},
+{question:"When did i meet for the first time ?",answers:["12 june","06 June","17 May","17 july"],correct:1},
+{question:"What Color panjabi was i wearing when you first saw me ?",answers:["Oliva Green","Metalic Gold","Mustard Yellow","Bronze"],correct:0},
 {question:"What makes this birthday different?",answers:["It's online","It's a surprise","Distance is involved","All of these"],correct:3},
 {question:"Who misses the other person more?",answers:["NISHU","JONA","Both","Obviously JONA 😌"],correct:3},
 {question:"What does JONA want most on her birthday?",answers:["A gift","A call","To see NISHU happy","Cake"],correct:2}];
