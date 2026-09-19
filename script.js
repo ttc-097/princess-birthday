@@ -18,7 +18,7 @@ function showScreen(id){document.querySelectorAll(".screen").forEach(s=>s.classL
 function unlock(){const input=document.getElementById("secretCode"),error=document.getElementById("error");if(input.value.trim()===CONFIG.secretCode){error.textContent="";localStorage.setItem("birthdayUnlocked","true");playMusic();notifyVisit();showScreen("welcome")}else{error.textContent="Wrong code. You should know this one. 😌";input.value="";input.focus()}}
 
 function startExperience(){playMusic();showScreen("message")}
-function playMusic(){const music=document.getElementById("music");music.volume=.100;music.play().catch(()=>{})}
+function playMusic(){const music=document.getElementById("music");music.volume=1;music.play().catch(()=>{})}
 
 const memories=[
 {year:"THE BEGINNING",title:"Where it all started",text:"Replace this with your first memory together.",image:"assets/photos/memory01.jpg"},
