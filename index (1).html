@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050507">
+<title>NISHU — 22.09.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-1"></div><div class="ambient ambient-2"></div><div id="particles"></div>
+
+<div id="loader" class="loader"><div class="loader-content"><div class="loader-ring"></div><p>SYSTEM ONLINE</p><span>Preparing something special...</span></div></div>
+
+<main>
+<section id="landing" class="screen active">
+<p class="eyebrow">PRIVATE EXPERIENCE • 22.09.2026</p>
+<h1>A little world<br><span>made for you.</span></h1>
+<p class="hero-text">This isn't just a birthday message.<br>It's something you have to experience.</p>
+<button class="primary-btn" onclick="showScreen('access')">ENTER EXPERIENCE <span>→</span></button>
+<div class="scroll-hint"><span></span>SCROLL TO EXPLORE</div>
+</section>
+
+<section id="access" class="screen">
+<div class="card access-card">
+<div class="lock-icon">⌁</div><p class="eyebrow">RESTRICTED ACCESS</p><h2>Private Access</h2>
+<p>This experience was created<br>for one person only.</p>
+<input type="password" id="secretCode" placeholder="Enter secret code" maxlength="20" autocomplete="off" onkeydown="if(event.key==='Enter')unlock()">
+<button class="primary-btn full-btn" onclick="unlock()">UNLOCK</button><p id="error" class="error-message"></p>
+</div>
+<button class="back-btn" onclick="showScreen('landing')">← Back</button>
+</section>
+
+<section id="welcome" class="screen">
+<div class="welcome-content"><p class="eyebrow">ACCESS GRANTED ✓</p><p class="small-line">HEY,</p><h1 id="herName">NISHU</h1><div class="line"></div>
+<p class="hero-text">I could have just sent you a message...<br>but you deserve something better than that.</p>
+<button class="primary-btn" onclick="startExperience()">BEGIN <span>→</span></button></div>
+</section>
+
+<section id="message" class="screen">
+<div class="section-number">01</div><p class="eyebrow">A FEW WORDS</p><h2>Before anything<br><span>else...</span></h2>
+<p class="hero-text">Happy Birthday, my love.<br>
+Every day with you feels like a gift,<br>
+and today the world gets to celebrate<br>
+what I already know every single day —<br>
+that you're the best thing that ever happened to me.</p>
+<button class="primary-btn" onclick="showScreen('memories')">CONTINUE <span>→</span></button>
+</section>
+
+<section id="memories" class="screen">
+<div class="section-number">02</div><p class="eyebrow">OUR STORY</p><h2>Some moments<br><span>I never want to forget.</span></h2>
+<div id="timeline" class="timeline"></div>
+<button class="primary-btn" onclick="showScreen('game')">NEXT CHAPTER <span>→</span></button>
+</section>
+
+<section id="game" class="screen">
+<div class="section-number">03</div><p class="eyebrow">A LITTLE TEST</p><h2>How well do<br><span>you know us?</span></h2>
+<div class="quiz-card"><div class="quiz-progress"><span id="questionNumber">1</span> / <span id="totalQuestions">5</span></div>
+<h3 id="question"></h3><div id="answers" class="answers"></div><p id="quizFeedback"></p></div>
+</section>
+
+<section id="gift" class="screen">
+<p class="eyebrow">MISSION COMPLETE ✓</p><h2>You've unlocked<br><span>your final gift.</span></h2>
+<div id="giftBox" class="gift-box" onclick="openGift()"><div class="gift-lid"></div><div class="gift-body"></div><div class="gift-ribbon"></div></div><p id="giftHint">Tap the box.</p>
+</section>
+
+<section id="video" class="screen">
+<p class="eyebrow">A MESSAGE FROM ME</p><h2>Something I couldn't<br>say with just text.</h2>
+<div class="video-container"><video id="birthdayVideo" controls playsinline preload="metadata"><source src="assets/video/birthday-message.mp4" type="video/mp4">Your browser does not support video.</video></div>
+<button class="primary-btn" onclick="showScreen('final')">ONE LAST THING <span>→</span></button>
+</section>
+
+<section id="final" class="screen final-screen">
+<div class="final-glow"></div><p class="eyebrow">22 • 09 • 2026</p><div class="heart">♥</div>
+<h1>HAPPY<br><span>BIRTHDAY</span></h1><h2 id="finalName">NISHU</h2><div class="final-line"></div>
+<p class="final-message">Distance couldn't stop me<br>from being part of your day.<br><br>Maybe I couldn't be there beside you,<br>but I hope this little world<br>reminds you how loved you are.</p>
+<p class="signature">— <span id="yourName">JONA</span></p><div class="final-date">MADE WITH LOVE • 22.09.2026</div>
+</section>
+</main>
+
+<audio id="music" loop preload="auto"><source src="assets/music/bg-music.mp3" type="audio/mpeg"></audio>
+<script src="script.js"></script>
+</body>
+</html>
