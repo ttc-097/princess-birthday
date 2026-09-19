@@ -21,9 +21,9 @@ function startExperience(){playMusic();showScreen("message")}
 function playMusic(){const music=document.getElementById("music");music.volume=1;music.play().catch(()=>{})}
 
 const memories=[
-{year:"THE BEGINNING",title:"Where it all started",text:"Replace this with your first memory together.",image:"assets/photos/memory01.jpg"},
-{year:"MEMORY 02",title:"That one unforgettable day",text:"Write something only the two of you understand.",image:"assets/photos/memory02.jpg"},
-{year:"MEMORY 03",title:"A moment I still remember",text:"Add another personal story here.",image:"assets/photos/memory03.jpg"}];
+{year:"THE BEGINNING",title:"Where it all started",text:"Capture Before First Touch.",image:"assets/photos/memory01.jpg"},
+{year:"MEMORY 02",title:"That one unforgettable day",text:"Sharee with You Joss Combinarion.",image:"assets/photos/memory02.jpg"},
+{year:"MEMORY 03",title:"A moment I still remember",text:"This Time We Come Too Much Closer",image:"assets/photos/memory03.jpg"}];
 
 function loadMemories(){const t=document.getElementById("timeline");memories.forEach(m=>{const d=document.createElement("div");d.className="memory";d.innerHTML=`<div class="memory-year">${m.year}</div><h3>${m.title}</h3><p>${m.text}</p><img src="${m.image}" alt="${m.title}" loading="lazy" onerror="this.style.display='none'">`;t.appendChild(d)})}
 
