@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 document.getElementById("herName").textContent=CONFIG.herName;
 document.getElementById("finalName").textContent=CONFIG.herName;
 document.getElementById("yourName").textContent=CONFIG.yourName;
-createParticles();loadMemories();updateCountdown();setInterval(updateCountdown,1000);loadQuiz();
+createParticles();loadMemories();loadQuiz();
 setTimeout(()=>document.getElementById("loader").classList.add("hide"),1600);
 });
 
@@ -17,7 +17,7 @@ function showScreen(id){document.querySelectorAll(".screen").forEach(s=>s.classL
 
 function unlock(){const input=document.getElementById("secretCode"),error=document.getElementById("error");if(input.value.trim()===CONFIG.secretCode){error.textContent="";localStorage.setItem("birthdayUnlocked","true");playMusic();showScreen("welcome")}else{error.textContent="Wrong code. You should know this one. 😌";input.value="";input.focus()}}
 
-function startExperience(){playMusic();showScreen("countdown")}
+function startExperience(){playMusic();showScreen("message")}
 function playMusic(){const music=document.getElementById("music");music.volume=.35;music.play().catch(()=>{})}
 
 function updateCountdown(){const target=new Date(CONFIG.birthday).getTime(),distance=target-Date.now(),title=document.getElementById("countdownTitle"),status=document.getElementById("birthdayStatus");if(distance<=0){["days","hours","minutes","seconds"].forEach(x=>document.getElementById(x).textContent="00");title.textContent="IT'S YOUR DAY ❤️";status.textContent=`Happy Birthday, ${CONFIG.herName}!`;return}document.getElementById("days").textContent=String(Math.floor(distance/86400000)).padStart(2,"0");document.getElementById("hours").textContent=String(Math.floor(distance/3600000)%24).padStart(2,"0");document.getElementById("minutes").textContent=String(Math.floor(distance/60000)%60).padStart(2,"0");document.getElementById("seconds").textContent=String(Math.floor(distance/1000)%60).padStart(2,"0");status.textContent="Counting every second until your day."}
